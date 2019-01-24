@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>moodfood</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="shortcut icon" type="image/png" th:href="@{assets/icon.png}" />
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="wrapper-login">
+        <div class="logo logo-login">moodfood</div>
+        <form class="login-form" action="search.html" th:action="@{/search}">
+            <input type="text" placeholder="Login">
+            <input type="password" placeholder="Hasło">
+            <input class="btn btn-primary" type="submit" value="Zaloguj się">
+        </form>
+        <a href="register.html" th:href="@{/register}" class="btn">Zarejestruj się</a>
+    </div>
+</body>
+</html>
