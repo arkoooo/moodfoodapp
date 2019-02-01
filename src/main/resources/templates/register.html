@@ -12,11 +12,16 @@
     <div class="bg"></div>
     <div class="wrapper-login">
         <div class="logo logo-login">moodfood</div>
-        <form class="login-form" action="index.html" th:action="@{index}">
-            <input type="text" placeholder="Login">
-            <input type="email" placeholder="Adres e-mail">
-            <input type="password" placeholder="Hasło">
+        <form class="login-form" href="index.html" th:action="@{/new}">
+            <form th:object="${users}" th:method="users">
+            <input type="text" th:field="*{userName}" placeholder="Login">
+                <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" />
+            <input type="email" th:field="*{userMail}" placeholder="Adres e-mail">
+                <p th:if="${#fields.hasErrors('userMail')}" th:errors="*{userMail}" />
+            <input type="password" th:field="*{userPassword}"  placeholder="Hasło">
+                <p th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}" />
             <input class="btn btn-primary" type="submit" value="Stwórz konto">
+            </form>
         </form>
     </div>
 </body>

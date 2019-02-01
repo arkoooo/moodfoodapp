@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -8,18 +10,23 @@ import java.util.Set;
 @Entity
 public class Users {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
+
+    @NotEmpty(message = "Musisz podać login.")
     private String userName;
+    @NotEmpty(message = "Musisz podać mail.")
     private String userMail;
+    @NotEmpty(message = "Musisz podać hasło.")
     private String userPassword;
     private String userPhoto;
 
     public Users(){
     }
 
-    public Users(String userName, String userMail, String userPassword, String userPhoto) {
+    public Users(@NotNull String userName, @NotNull String userMail, @NotNull String userPassword, String userPhoto) {
         this.userName = userName;
         this.userMail = userMail;
         this.userPassword = userPassword;
@@ -76,7 +83,6 @@ public class Users {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(userId);
     }
 

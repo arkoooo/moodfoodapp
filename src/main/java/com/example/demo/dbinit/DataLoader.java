@@ -31,8 +31,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     private void init(){
-
-
         Users michaelScofield = new Users("Michael", "scofield@panama.com", "trudnehaselko", "scofield.jpg");
         Users zdzislawNowak = new Users("Zdzisław", "zdziszek@wp.pl", "trudnehaselko", "nowak.jpg");
         Users barneyStinson = new Users ("Barney", "stinson@gnb.com", "awesome", "barney.jpg");
@@ -61,7 +59,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
         Reviews reviewZymft1 = new Reviews(1, 1, "Super restauracja.", 5);
         reviewsRepository.save(reviewZymft1);
-
 
         zymft.getReviews().add(reviewZymft1);
         reviewZymft1.getRestaurants().add(zymft);
